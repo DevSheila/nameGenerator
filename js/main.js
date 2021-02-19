@@ -7,6 +7,9 @@ const form = document.getElementById("itemForm")
 const gender = document.getElementById("genderSelector");
 const bDate = document.getElementById("bDate");
 const btnSubmit = document.getElementById("btnSubmit");
+const feedback = document.querySelector('.feedback');
+var message;
+var msgClass;
 
 form.addEventListener("submit", (event)=>{
     event.preventDefault();
@@ -136,8 +139,28 @@ function getName(){
         }else{
             name="Ama";
         }
-        alert("Your Gender: "+gender.value + " Day Born: "+ dayBorn +" Ghanian Name: " +name );  
+        alert("Your Gender: "+gender.value + " Day Born: "+ dayBorn +" Ghanian Name: " +name ); 
+        message = `Your Gender:${gender.value} Day Born: ${dayBorn} Ghanian Name:  ${name}`;
+        msgClass = 'alert-success';
+        displayFeedback(message);
+        
     }
 
     
 }
+
+function displayFeedback(message , msgClass) {
+    const feedback = document.querySelector('.feedback');
+    
+    //make the feedback view visible 
+
+    feedback.classList.add('showItem', 'alert', 'alert-success');
+    //set the timeout for feedback 
+
+    feedback.innerHTML = `${message}`;
+
+    setTimeout(function(){
+        feedback.classList.remove('showItem', 'alert', msgClass);
+    
+    }, 30000);
+};

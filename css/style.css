@@ -94,4 +94,10 @@ body{
     text-decoration: none;
     color:#d5d5d5;
 }
+.feedback {
+    display: none;
+  }
+.showItem {
+    display: block;
+  }
 
