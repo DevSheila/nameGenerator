@@ -68,3 +68,9 @@ body{
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+.social a{
+    text-decoration: none;
+    font-size:4.5em;
+    padding:3rem;
+}
