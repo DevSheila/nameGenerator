@@ -11,3 +11,10 @@ body{
     font-weight: 600;
     margin-bottom: -1px;
 }
+.jumbotron{
+    background-image: url('../images/paul-zoetemeijer-ekBOf6sJYYo-unsplash.jpg');
+    height: 88vh;
+    background-size: cover;
+    background-position:center;
+    border-radius: 0px!important;
+}
