@@ -14,3 +14,15 @@ form.addEventListener("submit", (event)=>{
     validateForm();
     
 });
+
+function validateForm(){
+    //No Empty Fields
+    if(gender.value === ""){
+        alert("Please Enter Gender");
+    }else if(bDate.value === ""){
+        alert("Please Enter Birth Date!")
+        
+    }else{
+        console.log("All form fields have been filled")
+    }
+}
