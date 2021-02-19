@@ -15,6 +15,7 @@ form.addEventListener("submit", (event)=>{
     event.preventDefault();
     console.log(gender.value + ""+bDate.value );
     validateForm();
+    clearFields();
     
 });
 
@@ -167,4 +168,9 @@ function displayFeedback(message , msgClass) {
         feedback.classList.remove('showItem', 'alert', msgClass);
     
     }, 30000);
+};
+
+function clearFields(){
+    gender.value ='';
+    bDate.value ='';
 };
