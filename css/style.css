@@ -22,3 +22,22 @@ body{
     color:white;
     text-align: left;
 }
+
+.row{
+    background-color:transparent;
+    border-radius: 30px;
+
+}
+
+
+.form-section{
+    background-color: rgba(219,226,226);
+    opacity: 0.8;
+    border-radius: 10px;
+    box-shadow:5px 5px 10px rgb(110, 108, 108);
+}
+
+.form-control{
+    color:black;
+    outline:none;
+}
