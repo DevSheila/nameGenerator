@@ -94,3 +94,8 @@ body{
     color:#bb0000;
 }
 
+.fa-facebook:hover,.fa-google:hover,.fa-instagram:hover,.fa-twitter:hover,.fa-youtube:hover{
+    text-decoration: none;
+    color:#d5d5d5;
+}
+
