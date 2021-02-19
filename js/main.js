@@ -21,12 +21,15 @@ form.addEventListener("submit", (event)=>{
 function validateForm(){
     //No Empty Fields
     if(gender.value === ""){
-        alert("Please Enter Gender");
+        message = `Please Enter Gender`;
+        msgClass = 'alert-danger';
+        displayFeedback(message,msgClass);
     }else if(bDate.value === ""){
-        alert("Please Enter Birth Date!")
+        message = `Please Enter Your Birth Day Date`;
+        msgClass = 'alert-danger';
+        displayFeedback(message,msgClass);
         
     }else{
-        console.log("All form fields have been filled")
         validatedate(bDate)
     }
 }
@@ -62,7 +65,9 @@ function validatedate(bDate){
     {
     if (dd>ListofDays[mm-1])
     {
-    alert('Invalid date format!');
+        message = `Enter date of The Format:dd-mm-yyy or dd/mm/yyyy`;
+        msgClass = 'alert-danger';
+        displayFeedback(message,msgClass);
     return false;
     }
     }
@@ -75,19 +80,25 @@ function validatedate(bDate){
     }
     if ((lyear==false) && (dd>=29))
     {
-    alert('Invalid date format!');
+        message = `Enter date of The Format:dd-mm-yyy or dd/mm/yyyy`;
+        msgClass = 'alert-danger';
+        displayFeedback(message,msgClass);
     return false;
     }
     if ((lyear==true) && (dd>29))
     {
-    alert('Invalid date format!');
+        message = `Enter date of The Format:dd-mm-yyy or dd/mm/yyyy`;
+        msgClass = 'alert-danger';
+        displayFeedback(message,msgClass);
     return false;
     }
     }
     }
     else
     {
-    alert("Invalid date format!");
+     message = `Enter date of The Format:dd-mm-yyy or dd/mm/yyyy`;
+    msgClass = 'alert-danger';
+    displayFeedback(message,msgClass);
     document.myForm.text1.focus();
     return false;
     }
@@ -139,10 +150,9 @@ function getName(){
         }else{
             name="Ama";
         }
-        alert("Your Gender: "+gender.value + " Day Born: "+ dayBorn +" Ghanian Name: " +name ); 
         message = `Your Gender:${gender.value} Day Born: ${dayBorn} Ghanian Name:  ${name}`;
         msgClass = 'alert-success';
-        displayFeedback(message);
+        displayFeedback(message,msgClass);
         
     }
 
@@ -154,7 +164,7 @@ function displayFeedback(message , msgClass) {
     
     //make the feedback view visible 
 
-    feedback.classList.add('showItem', 'alert', 'alert-success');
+    feedback.classList.add('showItem', 'alert', msgClass);
     //set the timeout for feedback 
 
     feedback.innerHTML = `${message}`;
