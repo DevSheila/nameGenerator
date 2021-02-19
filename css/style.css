@@ -2,12 +2,13 @@ body{
     background-color: white;
 }
 .navbar-brand {
-    color:#fff;
-    margin:0 20px; 
-    margin-top:30px;
+    background: -webkit-linear-gradient(#23074d,#cc5333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 2rem;
 }
 .navbar-brand:hover{
-    color: #fff;
     font-weight: 600;
     margin-bottom: -1px;
 }
