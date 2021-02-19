@@ -43,7 +43,44 @@
     </section>
     <!-- --------------------------------------------END OF HEADER SECTION-------------------------------------- -->
 <!-- ----------------------------------------------FORM SECTION--------------------------------------------- -->
+<section class="form ">
+    <div class="container p-5">
+        <div class="row d-flex justify-content-center my-5">
+            <div class="col-lg-7  px-5 pt-5 form-section">
+                <h4 class="text-center"> Wanna Find Out Your Ghanian Name?</h4>
+                <form name="myForm" action="" id='itemForm' method="get">
+                    <div class="form-row">
+                        <div class="col-lg-12">
+                            <label for="gender">Enter Your Gender</label>
+                            <select name="gender" id="genderSelector" class="form-select form-select-lg my-3 p-4" aria-label=".form-select-lg example" required>
+                            <!-- <select name="gender" id="genderSelector" class="form-control my-3 p-4"  required> -->
 
+                                <!-- <option selected>Gender</option> -->
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                    </div>
+    
+                    <div class="form-row">
+                        <div class="col-lg-12">
+                            <label for="gender">Enter Your Birth Date</label>
+                            <!-- <input type="text" placeholder="Date of birth" onfocus="(this.type='date')">  -->
+                            <input type="text" name="text1" id="bDate" placeholder="dd-mm-yyyy"  class="form-control my-3 p-4">
+                        </div>
+                    </div>
+    
+                    <div class="form-row">
+                        <div class="col-lg-12 mb-5">
+                            <button type="submit"  id="btnSubmit" class=" btn btn-lg btn1 ">SUBMIT</button>
+                        </div>
+                    </div>
+    
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- --------------------------------------------END OF FORM SECTION---------------------------------------- -->
 
     <!-- --------------------------------------------FOOTER SECTION---------------------------------------- -->
