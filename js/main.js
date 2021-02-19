@@ -24,6 +24,7 @@ function validateForm(){
         
     }else{
         console.log("All form fields have been filled")
+        validatedate(bDate)
     }
 }
 
