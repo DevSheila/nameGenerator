@@ -145,10 +145,11 @@ function getName(){
         }else{
             name="Ama";
         }
-        message = `Your Gender:${gender.value} Day Born: ${dayBorn} Ghanian Name:  ${name}`;
+        message = `Your Akan Name:  ${name}`;
         msgClass = 'alert-success';
         displayFeedback(message,msgClass);
-        
+       
+      
     }
 
     
@@ -167,7 +168,7 @@ function displayFeedback(message , msgClass) {
     setTimeout(function(){
         feedback.classList.remove('showItem', 'alert', msgClass);
     
-    }, 30000);
+    }, 7000);
 };
 
 function clearFields(){

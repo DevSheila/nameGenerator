@@ -96,8 +96,18 @@ body{
 }
 .feedback {
     display: none;
-  }
+}
 .showItem {
     display: block;
-  }
+}
 
+.alert-success{
+    background-color: rgb(118, 175, 52);
+    color:white;
+}
+.alert-danger{
+    background-color: rgb(212, 40, 40);
+    color:white;
+}
+
+ 
