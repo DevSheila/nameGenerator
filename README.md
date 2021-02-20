@@ -45,7 +45,7 @@ There are curently no bugs.
 * You can also clone it directly to your folder:
 
 ```
-$ git clone  https://devsheila.github.io/nameGenerator/
+$ git clone  https://github.com/DevSheila/nameGenerator.git
 
 ```
 
