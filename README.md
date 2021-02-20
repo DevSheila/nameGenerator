@@ -12,7 +12,7 @@ MyAkann a web application that generates one's first Ghanian Akan name based on 
 
 * [Technologies](#technologies)
 
-* [Known Bugs](#known bugs)
+* [Known Bugs](#knownbugs)
 
 * [Setup](#setup)
 
