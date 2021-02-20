@@ -19,7 +19,7 @@ MyAkann a web application that generates one's first Ghanian Akan name based on 
 * [Licence](#Licence)
 
 ## Demo
-Here is a working live demo :   https://devsheila.github.io/wk1Fri-PortfolioWebsite/
+Here is a working live demo :    https://devsheila.github.io/nameGenerator/
 ## Features
 
 
@@ -45,7 +45,7 @@ There are curently no bugs.
 * You can also clone it directly to your folder:
 
 ```
-$ git clone https://devsheila.github.io/wk1Fri-PortfolioWebsite/
+$ git clone  https://github.com/DevSheila/nameGenerator.git
 
 ```
 
