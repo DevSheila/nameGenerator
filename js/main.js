@@ -1,7 +1,3 @@
-// #itemForm 
-// #genderSelector
-// #bdate
-// #btnSubmit
 
 const form = document.getElementById("itemForm")
 const gender = document.getElementById("genderSelector");
