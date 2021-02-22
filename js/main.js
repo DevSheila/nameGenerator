@@ -36,20 +36,21 @@ function validateForm(){
 function validatedate(bDate){
 
     var dateformat = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
-    // Match the date format through regular expression
+    
+    //using regular expression to match date format input.
     if(bDate.value.match(dateformat)){
         document.myForm.text1.focus();
 
-        //Test which seperator is used '/' or '-'
-        var opera1 = bDate.value.split('/');
-        var opera2 = bDate.value.split('-');
-        lopera1 = opera1.length;
-        lopera2 = opera2.length;
+        //Testing what date seperator is used  slash('/') or ('-')
+        var separator1 = bDate.value.split('/');
+        var separator2 = bDate.value.split('-');
+        len1 = separator1.length;
+        len2 = separator2.length;
 
-        // Extract the string into month, date and year
-        if (lopera1>1){
+        // Extract the string to get the month, date and year
+        if (len1>1){
         var pdate = bDate.value.split('/');
-        }else if (lopera2>1){
+        }else if (len2>1){
         var pdate = bDate.value.split('-');
         }
 
@@ -57,10 +58,13 @@ function validatedate(bDate){
         var mm  = parseInt(pdate[1]);
         var yy = parseInt(pdate[2]);
 
-        // Create list of days of a month [assume there is no leap year by default]
-        var ListofDays = [31,28,31,30,31,30,31,31,30,31,30,31];
+        // Create an array list of days of a month 
+        //Here,we are making assumption that there's no leap year.
+
+        var DaysList = [31,28,31,30,31,30,31,31,30,31,30,31];
         if (mm==1 || mm>2){
-            if (dd>ListofDays[mm-1]){
+            if (dd>DaysList[mm-1]){
+                //Invalid date input
                 message = `Enter date of The Format:dd-mm-yyy or dd/mm/yyyy`;
                 msgClass = 'alert-danger';
                 displayFeedback(message,msgClass);
@@ -74,12 +78,14 @@ function validatedate(bDate){
             if ( (!(yy % 4) && yy % 100) || !(yy % 400)) {
                 lyear = true;
             }if ((lyear==false) && (dd>=29)){
+                //Invalid Date Input 
                 message = `Enter date of The Format:dd-mm-yyy or dd/mm/yyyy`;
                 msgClass = 'alert-danger';
                 displayFeedback(message,msgClass);
                 return false;
             }
             if ((lyear==true) && (dd>29)){
+                //Invalid date input
                 message = `Enter date of The Format:dd-mm-yyy or dd/mm/yyyy`;
                 msgClass = 'alert-danger';
                 displayFeedback(message,msgClass);
@@ -88,12 +94,14 @@ function validatedate(bDate){
         }
 
     }else{
+        //Invalid date input
         message = `Enter date of The Format:dd-mm-yyy or dd/mm/yyyy`;
         msgClass = 'alert-danger';
         displayFeedback(message,msgClass);
         document.myForm.text1.focus();
         return false;
     }
+        //Calling getName function
         getName();
   
     }
@@ -124,7 +132,6 @@ function getName(){
             name="Kwame";
         }
         
-        alert("Your Gender: "+gender.value + " Day Born: "+ dayBorn +" Ghanian Name: " +name );
     }else {
         if(dayBorn == "Sunday"){
             name="Akosau";
