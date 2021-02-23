@@ -138,7 +138,11 @@ function getName(){
         }else{
             name="Kwame";
         }
-        
+        message = `Your Akan Name:  ${name}`;
+        msgClass = 'alert-success';
+        displayFeedback(message,msgClass);
+
+        alert("Your Akan name is "+ name);
     }else {
         if(dayBorn == "Sunday"){
             name="Akosau";
