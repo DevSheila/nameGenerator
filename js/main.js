@@ -1,3 +1,7 @@
+// #itemForm 
+// #genderSelector
+// #bdate
+// #btnSubmit
 
 const form = document.getElementById("itemForm")
 const gender = document.getElementById("genderSelector");
@@ -18,10 +22,12 @@ form.addEventListener("submit", (event)=>{
 function validateForm(){
     //No Empty Fields
     if(gender.value === ""){
+        alert("Please Enter your Gender")
         message = `Please Enter Gender`;
         msgClass = 'alert-danger';
         displayFeedback(message,msgClass);
     }else if(bDate.value === ""){
+        alert("Please Enter Your Birth Day Date")
         message = `Please Enter Your Birth Day Date`;
         msgClass = 'alert-danger';
         displayFeedback(message,msgClass);
@@ -33,79 +39,80 @@ function validateForm(){
 
 //Date validation
 
-function validatedate(bDate){
-
-    var dateformat = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+function validatedate(bDate){var dateformat = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
     
-    //using regular expression to match date format input.
-    if(bDate.value.match(dateformat)){
-        document.myForm.text1.focus();
+//using regular expression to match date format input.
+if(bDate.value.match(dateformat)){
+    document.myForm.text1.focus();
 
-        //Testing what date seperator is used  slash('/') or ('-')
-        var separator1 = bDate.value.split('/');
-        var separator2 = bDate.value.split('-');
-        len1 = separator1.length;
-        len2 = separator2.length;
+    //Testing what date seperator is used  slash('/') or ('-')
+    var separator1 = bDate.value.split('/');
+    var separator2 = bDate.value.split('-');
+    len1 = separator1.length;
+    len2 = separator2.length;
 
-        // Extract the string to get the month, date and year
-        if (len1>1){
-        var pdate = bDate.value.split('/');
-        }else if (len2>1){
-        var pdate = bDate.value.split('-');
-        }
-
-        var dd = parseInt(pdate[0]);
-        var mm  = parseInt(pdate[1]);
-        var yy = parseInt(pdate[2]);
-
-        // Create an array list of days of a month 
-        //Here,we are making assumption that there's no leap year.
-
-        var DaysList = [31,28,31,30,31,30,31,31,30,31,30,31];
-        if (mm==1 || mm>2){
-            if (dd>DaysList[mm-1]){
-                //Invalid date input
-                message = `Enter date of The Format:dd-mm-yyy or dd/mm/yyyy`;
-                msgClass = 'alert-danger';
-                displayFeedback(message,msgClass);
-                return false;
-            }
-
-        }
-
-        if (mm==2){
-            var lyear = false;
-            if ( (!(yy % 4) && yy % 100) || !(yy % 400)) {
-                lyear = true;
-            }if ((lyear==false) && (dd>=29)){
-                //Invalid Date Input 
-                message = `Enter date of The Format:dd-mm-yyy or dd/mm/yyyy`;
-                msgClass = 'alert-danger';
-                displayFeedback(message,msgClass);
-                return false;
-            }
-            if ((lyear==true) && (dd>29)){
-                //Invalid date input
-                message = `Enter date of The Format:dd-mm-yyy or dd/mm/yyyy`;
-                msgClass = 'alert-danger';
-                displayFeedback(message,msgClass);
-                return false;
-            }
-        }
-
-    }else{
-        //Invalid date input
-        message = `Enter date of The Format:dd-mm-yyy or dd/mm/yyyy`;
-        msgClass = 'alert-danger';
-        displayFeedback(message,msgClass);
-        document.myForm.text1.focus();
-        return false;
+    // Extract the string to get the month, date and year
+    if (len1>1){
+    var extractDate = bDate.value.split('/');
+    }else if (len2>1){
+    var extractDate = bDate.value.split('-');
     }
-        //Calling getName function
-        getName();
-  
+
+    var dd = parseInt(extractDate[0]);
+    var mm  = parseInt(extractDate[1]);
+    var yy = parseInt(extractDate[2]);
+
+    // Create an array list of days of a month 
+    //Here,we are making assumption that there's no leap year.
+
+    var DaysList = [31,28,31,30,31,30,31,31,30,31,30,31];
+    if (mm==1 || mm>2){
+        if (dd>DaysList[mm-1]){
+            //Invalid date input
+            alert("Enter date of The Format:dd-mm-yyy or dd/mm/yyyy");
+            message = `Enter date of The Format:dd-mm-yyy or dd/mm/yyyy`;
+            msgClass = 'alert-danger';
+            displayFeedback(message,msgClass);
+            return false;
+        }
+
     }
-  
+
+    if (mm==2){
+        var lyear = false;
+        if ( (!(yy % 4) && yy % 100) || !(yy % 400)) {
+            lyear = true;
+        }if ((lyear==false) && (dd>=29)){
+            //Invalid Date Input 
+            alert("Enter date of The Format:dd-mm-yyy or dd/mm/yyyy");
+            message = `Enter date of The Format:dd-mm-yyy or dd/mm/yyyy`;
+            msgClass = 'alert-danger';
+            displayFeedback(message,msgClass);
+            return false;
+        }
+        if ((lyear==true) && (dd>29)){
+            //Invalid date input
+            alert("Enter date of The Format:dd-mm-yyy or dd/mm/yyyy");
+            message = `Enter date of The Format:dd-mm-yyy or dd/mm/yyyy`;
+            msgClass = 'alert-danger';
+            displayFeedback(message,msgClass);
+            return false;
+        }
+    }
+
+}else{
+    //Invalid date input
+    alert("Enter date of The Format:dd-mm-yyy or dd/mm/yyyy");
+    message = `Enter date of The Format:dd-mm-yyy or dd/mm/yyyy`;
+    msgClass = 'alert-danger';
+    displayFeedback(message,msgClass);
+    document.myForm.text1.focus();
+    return false;
+}
+    //Calling getName function
+    getName();
+
+}
 //----------------------------------------Determining Name-----------------------------
 
 function getName(){
@@ -151,6 +158,8 @@ function getName(){
         message = `Your Akan Name:  ${name}`;
         msgClass = 'alert-success';
         displayFeedback(message,msgClass);
+
+        alert("Your Akan name is "+ name);
        
       
     }
