@@ -39,80 +39,81 @@ function validateForm(){
 
 //Date validation
 
-function validatedate(bDate){var dateformat = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
-    
-//using regular expression to match date format input.
-if(bDate.value.match(dateformat)){
-    document.myForm.text1.focus();
 
+function validatedate(bDate){
+
+  var dateformat = /^(0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])[\/\-]\d{4}$/;
+    //using regular expression to match date format input.
+  if( bDate.value.match(dateformat) ){
+
+   document.myForm.text1.focus();
     //Testing what date seperator is used  slash('/') or ('-')
-    var separator1 = bDate.value.split('/');
-    var separator2 = bDate.value.split('-');
-    len1 = separator1.length;
-    len2 = separator2.length;
-
+    var opera1 = bDate.value.split('/');
+    var opera2 = bDate.value.split('-');
+    len1 = opera1.length;
+    len2 = opera2.length;
     // Extract the string to get the month, date and year
+
     if (len1>1){
     var extractDate = bDate.value.split('/');
     }else if (len2>1){
     var extractDate = bDate.value.split('-');
     }
 
-    var dd = parseInt(extractDate[0]);
-    var mm  = parseInt(extractDate[1]);
+    var mm  = parseInt(extractDate[0]);
+    var dd = parseInt(extractDate[1]);
     var yy = parseInt(extractDate[2]);
-
-    // Create an array list of days of a month 
+      // Create an array list of days of a month 
     //Here,we are making assumption that there's no leap year.
-
     var DaysList = [31,28,31,30,31,30,31,31,30,31,30,31];
     if (mm==1 || mm>2){
         if (dd>DaysList[mm-1]){
-            //Invalid date input
-            alert("Enter date of The Format:dd-mm-yyy or dd/mm/yyyy");
-            message = `Enter date of The Format:dd-mm-yyy or dd/mm/yyyy`;
-            msgClass = 'alert-danger';
-            displayFeedback(message,msgClass);
-            return false;
+          //Invalid date input
+     alert("Enter date of The Format:mm-dd-yyyy or mm/dd/yyyy");
+     message = `Enter date of The Format:mm-dd-yyyy or mm/dd/yyyy`;
+     msgClass = 'alert-danger';
+     displayFeedback(message,msgClass);
+        return false;
         }
-
     }
 
     if (mm==2){
         var lyear = false;
         if ( (!(yy % 4) && yy % 100) || !(yy % 400)) {
-            lyear = true;
-        }if ((lyear==false) && (dd>=29)){
-            //Invalid Date Input 
-            alert("Enter date of The Format:dd-mm-yyy or dd/mm/yyyy");
-            message = `Enter date of The Format:dd-mm-yyy or dd/mm/yyyy`;
-            msgClass = 'alert-danger';
-            displayFeedback(message,msgClass);
-            return false;
-        }
-        if ((lyear==true) && (dd>29)){
-            //Invalid date input
-            alert("Enter date of The Format:dd-mm-yyy or dd/mm/yyyy");
-            message = `Enter date of The Format:dd-mm-yyy or dd/mm/yyyy`;
-            msgClass = 'alert-danger';
-            displayFeedback(message,msgClass);
-            return false;
-        }
-    }
 
-}else{
+        lyear = true;
+        }
+
+        if ((lyear==false) && (dd>=29)){
+          //Invalid date input
+     alert("Enter date of The Format:mm-dd-yyyy or mm/dd/yyyy");
+     message = `Enter date of The Format:mm-dd-yyyy or mm/dd/yyyy`;
+     msgClass = 'alert-danger';
+     displayFeedback(message,msgClass);
+        return false;
+        }
+
+        if ((lyear==true) && (dd>29)){
+          //Invalid date input
+     alert("Enter date of The Format:mm-dd-yyyy or mm/dd/yyyy");
+     message = `Enter date of The Format:mm-dd-yyyy or mm/dd/yyyy`;
+     msgClass = 'alert-danger';
+     displayFeedback(message,msgClass);
+        return false;
+        }
+
+    }
+  }else{
     //Invalid date input
-    alert("Enter date of The Format:dd-mm-yyy or dd/mm/yyyy");
-    message = `Enter date of The Format:dd-mm-yyy or dd/mm/yyyy`;
+    alert("Enter date of The Format:mm-dd-yyyy or mm/dd/yyyy");
+    message = `Enter date of The Format:mm-dd-yyyy or mm/dd/yyyy`;
     msgClass = 'alert-danger';
     displayFeedback(message,msgClass);
-    document.myForm.text1.focus();
+   document.myForm.text1.focus();
     return false;
-}
-    //Calling getName function
+  }
     getName();
-
-}
+  }
 //----------------------------------------Determining Name-----------------------------
 
 function getName(){
@@ -140,11 +141,11 @@ function getName(){
         }else{
             alert("undefined")
         }
+        alert("Your Akan name is "+ name + " You were born on a " + dayBorn);
         message = `Your Akan Name:  ${name} .You were born on a ${dayBorn}`;
         msgClass = 'alert-success';
         displayFeedback(message,msgClass);
 
-        alert("Your Akan name is "+ name + " You were born on a " + dayBorn);
     }else {
         if(dayBorn == "Sunday"){
             name="Akosau";
@@ -172,7 +173,6 @@ function getName(){
       
     }
 
-    
 }
 
 function displayFeedback(message , msgClass) {
