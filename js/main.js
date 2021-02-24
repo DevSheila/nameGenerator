@@ -135,14 +135,16 @@ function getName(){
             name="Yaw";
         }else if(dayBorn == "Friday"){
             name="Kofi";
-        }else{
+        }else if(dayBorn == "Saturday"){
             name="Kwame";
+        }else{
+            alert("undefined")
         }
-        message = `Your Akan Name:  ${name}`;
+        message = `Your Akan Name:  ${name} .You were born on a ${dayBorn}`;
         msgClass = 'alert-success';
         displayFeedback(message,msgClass);
 
-        alert("Your Akan name is "+ name);
+        alert("Your Akan name is "+ name + " You were born on a " + dayBorn);
     }else {
         if(dayBorn == "Sunday"){
             name="Akosau";
@@ -156,14 +158,16 @@ function getName(){
             name="Yaa";
         }else if(dayBorn == "Friday"){
             name="Afua";
+        }else if(dayBorn == "Saturday"){
+            name="Afua";
         }else{
-            name="Ama";
+            alert("undefined")
         }
-        message = `Your Akan Name:  ${name}`;
+        message = `Your Akan Name:  ${name} .You were born on a ${dayBorn}`;
         msgClass = 'alert-success';
         displayFeedback(message,msgClass);
+        alert("Your Akan name is "+ name + " You were born on a " + dayBorn);
 
-        alert("Your Akan name is "+ name);
        
       
     }
